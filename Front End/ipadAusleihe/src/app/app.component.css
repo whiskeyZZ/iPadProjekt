@@ -1,0 +1,45 @@
+
+#login {
+background-color: rgb(235, 235, 238);
+width: 30%;
+margin-left: 31.7rem;
+}
+
+.card-header {
+    color: rgb(63, 222, 0);
+    background-color: rgb(219, 250, 198);
+    font-size: 35px;
+    font-weight:300
+}
+
+input {
+    padding: 0.7rem;
+    
+}
+
+button {
+    margin-left: 8.7rem;
+    background-color:rgb(1, 223, 1);
+    color:white;
+    border: none;
+    font-size: 20px;
+    font: weight 400px;
+    
+}
+
+
+button.overlay {
+    background-color:rgb(63, 222, 0);
+    
+}
+
+#klassen {
+    margin: 1.4rem;
+    padding: 0.6rem;
+    border-style: solid;
+    font-size: 30px;
+    font-weight:400
+}
+
+
+
