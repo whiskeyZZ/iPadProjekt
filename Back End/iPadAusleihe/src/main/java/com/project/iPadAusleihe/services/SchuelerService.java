@@ -1,5 +1,6 @@
 package com.project.iPadAusleihe.services;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
@@ -29,5 +30,9 @@ public class SchuelerService {
 
     public List<Schueler> findAllSchueler() {
         return schuelerRepo.findAll();
+    }
+
+    public Collection<Schueler> findAllSchuelerInSpecificClass() {
+        return schuelerRepo.findAllSchuelerInSpecificClass();
     }
 }

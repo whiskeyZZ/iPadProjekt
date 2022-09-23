@@ -1,0 +1,12 @@
+<table>
+  <tr>
+  <th>ID</th>
+  <th>Nachname</th>
+  <th>Vorname</th>
+  </tr>
+  <tr *ngFor="let schueler of schuelerList">
+    <td>{{schueler.schuelerID}}</td>
+    <td>{{schueler.nachname}}</td>
+    <td>{{schueler.vorname}}</td>
+    </tr>
+</table>

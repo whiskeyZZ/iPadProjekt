@@ -4,9 +4,9 @@ import { RoutesRecognized } from '@angular/router';
 
 
 @Component({
-  selector: 'login-root',
+  selector: 'app-account',
   templateUrl: './login.component.html',
-  styleUrls: ['../app/app.component.css']
+  styleUrls: ['../app.component.css']
 })
 export class LoginComponent {
   user:string;
@@ -25,7 +25,7 @@ export class LoginComponent {
   loginUser(): void {
     if(this.user == "test" && this.password == "test")
     {
-      
+
 
     }
   }

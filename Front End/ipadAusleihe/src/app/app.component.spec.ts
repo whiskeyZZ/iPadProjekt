@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from 'src/account/login.component';
+import { LoginComponent } from './account/login.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

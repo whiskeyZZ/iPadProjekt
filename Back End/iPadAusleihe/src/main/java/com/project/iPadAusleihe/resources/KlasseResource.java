@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,6 +24,7 @@ public class KlasseResource {
         this.klasseService = klasseService;
     }
 
+    @CrossOrigin
     @GetMapping("/all")
     public ResponseEntity<List<Klasse>> getAllKlassen() {
         List<Klasse> klasse = klasseService.findAllKlassen();
