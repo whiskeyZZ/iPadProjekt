@@ -5,8 +5,22 @@
   <th>Vorname</th>
   </tr>
   <tr *ngFor="let schueler of schuelerList">
+    <div>
     <td>{{schueler.schuelerID}}</td>
     <td>{{schueler.nachname}}</td>
     <td>{{schueler.vorname}}</td>
+    <td>
+      <button (click)="showEntryField()">+</button>
+    </td>
+  </div>
+    <div *ngIf="showEntry">
+      <input matNativeControl [(ngModel)]="serialnumber" [matAutocomplete]="auto" [formControl]="myControl">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let ipad of filteredOptions | async" [value]="ipad">
+          {{ipad.seriennummer}}
+        </mat-option>
+      </mat-autocomplete>
+      <button (click)="confirm()">iPad Ausgeben</button>
+    </div>
     </tr>
 </table>

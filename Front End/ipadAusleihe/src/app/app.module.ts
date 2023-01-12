@@ -7,9 +7,11 @@ import { RouterModule, Routes } from '@angular/router';
 //mport { APP_ROUTES } from './app.routes';
 import { KlassenComponent } from './klassen/klassen.component';
 import { StatistikComponent } from '../statistik/statistik.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SchuelerComponent } from './schueler/schueler.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,10 @@ import { SchuelerComponent } from './schueler/schueler.component';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent, LoginComponent, KlassenComponent, StatistikComponent]
