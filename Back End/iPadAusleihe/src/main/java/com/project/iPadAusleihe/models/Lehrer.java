@@ -23,4 +23,7 @@ public class Lehrer {
 
     @Column(name = "vorname")
     private String vorname;
+
+    @Column(name = "user")
+    private String user;
 }
