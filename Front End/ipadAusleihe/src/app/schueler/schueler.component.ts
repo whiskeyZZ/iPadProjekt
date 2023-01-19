@@ -17,8 +17,8 @@ export class SchuelerComponent implements OnInit {
   public schuelerList: Schueler[];
   public ipads: IPad[];
   
-  public showEntry: boolean = false;
-  serialnumber: string;
+  public showEntry: boolean[] = [];
+  serialnumber: string[] = [];
 
   myControl = new FormControl<string | IPad>('');
   filteredOptions: Observable<IPad[]>;
@@ -28,7 +28,9 @@ export class SchuelerComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.fillBool();
     this.getSchueler();
+    console.log(this.schuelerList);
 
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
@@ -61,12 +63,21 @@ export class SchuelerComponent implements OnInit {
     );
   }
 
-  public showEntryField(): void {
-    if (this.showEntry == false){
-      this.showEntry = true;
+  public fillBool(): void {
+    for (let i=0; i<1000; i++){
+      this.showEntry.push(false);
+    }
+    console.log(this.showEntry);
+    console.log("test");
+  }
+
+  public showEntryField(i: number): void {
+    console.log("test");
+    if (this.showEntry[i] == false){
+      this.showEntry[i] = true;
     }
     else {
-      this.showEntry = false;
+      this.showEntry[i] = false;
     }
 
     this.fetchIPads();

@@ -3,24 +3,23 @@
   <th>ID</th>
   <th>Nachname</th>
   <th>Vorname</th>
+  <th></th>
   </tr>
-  <tr *ngFor="let schueler of schuelerList">
-    <div>
+  <tr *ngFor="let schueler of schuelerList; let i = index">
     <td>{{schueler.schuelerID}}</td>
     <td>{{schueler.nachname}}</td>
     <td>{{schueler.vorname}}</td>
     <td>
-      <button (click)="showEntryField()">+</button>
-    </td>
-  </div>
-    <div *ngIf="showEntry">
-      <input matNativeControl [(ngModel)]="serialnumber" [matAutocomplete]="auto" [formControl]="myControl">
+      <button class="button-7" role="button" (click)="showEntryField(i)">+</button>
+    <div *ngIf="showEntry[i]" class="button-7">
+      <input matNativeControl [(ngModel)]="serialnumber[i]" [matAutocomplete]="auto" [formControl]="myControl">
       <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
         <mat-option *ngFor="let ipad of filteredOptions | async" [value]="ipad">
           {{ipad.seriennummer}}
         </mat-option>
       </mat-autocomplete>
-      <button (click)="confirm()">iPad Ausgeben</button>
+      <button class="button-7" role="button" (click)="confirm()">iPad Ausgeben</button>
     </div>
+    </td>
     </tr>
 </table>
