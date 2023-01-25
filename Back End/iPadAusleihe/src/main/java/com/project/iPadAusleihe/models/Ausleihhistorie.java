@@ -1,6 +1,6 @@
 package com.project.iPadAusleihe.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,8 +11,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 @Entity
 @Table(name="ausleihhistorie")
 public class Ausleihhistorie{
@@ -33,13 +35,12 @@ public class Ausleihhistorie{
     @JoinColumn(name = "lehrerID")
     private Lehrer lehrer;
 
-
     @Column(name="ausleihstatus")
     private String ausleihstatus;
 
     @Column(name="ausgabedatum")
-    private Date ausgabedatum;
+    private LocalDate ausgabedatum;
 
     @Column(name="rueckgabedatum")
-    private Date rueckgabedatum;
+    private LocalDate rueckgabedatum;
 }

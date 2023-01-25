@@ -7,6 +7,7 @@ import { SchuelerService } from '../schueler.service';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { FormControl } from '@angular/forms';
 import { map, Observable, startWith } from 'rxjs';
+import { Ausleihhistorie } from '../ausleihhistorie';
 
 @Component({
   selector: 'app-schueler',
@@ -30,7 +31,7 @@ export class SchuelerComponent implements OnInit {
   ngOnInit(): void {
     this.fillBool();
     this.getSchueler();
-    console.log(this.schuelerList);
+    this.fetchIPads();
 
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
@@ -55,7 +56,6 @@ export class SchuelerComponent implements OnInit {
     this.schuelerService.getSchueler().subscribe(
       (response: Schueler[]) => {
         this.schuelerList = response;
-        console.log(this.schuelerList);
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -64,29 +64,23 @@ export class SchuelerComponent implements OnInit {
   }
 
   public fillBool(): void {
-    for (let i=0; i<1000; i++){
+    for (let i=0; i<100; i++){
       this.showEntry.push(false);
     }
-    console.log(this.showEntry);
-    console.log("test");
   }
 
   public showEntryField(i: number): void {
-    console.log("test");
     if (this.showEntry[i] == false){
       this.showEntry[i] = true;
     }
     else {
       this.showEntry[i] = false;
     }
-
-    this.fetchIPads();
   }
 
   public fetchIPads(): void {
     this.ipadservice.getIPads().subscribe((response: IPad[]) => {
       this.ipads = response;
-      console.log(this.ipads);
     },
     (error: HttpErrorResponse) => {
       alert(error.message);
@@ -94,9 +88,31 @@ export class SchuelerComponent implements OnInit {
   );
   }
   
+  public confirm(i: number): void {
+    const Ausleihhistorie = {
+      iPad: this.searchForIPad(i).id,
+      schueler: this.schuelerList[i].id,
+      lehrer: 1,
+      ausgabe: null,
+      rueckgabe: null,
+      status: "ausgeliehen"
+    }
 
-  public confirm(): void {
+    this.ipadservice.postHistorie(JSON.stringify(Ausleihhistorie));
+  }
 
+  public searchForIPad(i: number): any {
+
+    for (let x=0; i<this.ipads.length; x++){
+      console.log("Seriennummer: " + this.ipads[x].seriennummer);
+      console.log("Serialnumber: " + JSON.stringify(this.serialnumber[i]))
+      console.log("Serialnumber: " + Object.values(this.serialnumber[i])[1])
+      if (this.ipads[x].seriennummer == Object.values(this.serialnumber[i])[1]){
+        return this.ipads[x];
+      }
+    }
+    return null;
+    
   }
 }
 
