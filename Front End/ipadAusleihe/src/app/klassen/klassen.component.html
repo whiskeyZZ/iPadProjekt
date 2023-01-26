@@ -1,5 +1,11 @@
-<div class="col p-4 m-3 text-center">
-  <h1 style="color: white">Klassenübersicht</h1>
+<div class="col p-4 m-3">
+  <button class="btn m-1 p-1 rounded-0" id="back" routerLink="/Statistiken">
+    Statistiken
+  </button>
+  <button class="btn m-1 p-1 rounded-0" id="logout" routerLink="/">
+    Logout
+  </button>
+  <h1 class="text-center" style="color: white">Klassenübersicht</h1>
 </div>
 
 <div class="d-grid gap-2 col-3 mx-auto" *ngFor="let klasse of klassen">

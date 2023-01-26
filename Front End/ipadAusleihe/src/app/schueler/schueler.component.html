@@ -1,28 +1,39 @@
-<div class="col p-4 m-3 text-center">
-  <h1 style="color: white">Schüler</h1>
+<div class="col p-4 m-3 ">
+  <button class="btn m-1 p-1 rounded-0" id="back" routerLink="/klassen/">
+    Zurück zu Klassen
+  </button>
+  <button class="btn m-1 p-1 rounded-0" id="logout" routerLink="/">
+    Logout
+  </button>
+  <h1 class="text-center" style="color: white">Schüler</h1>
 </div>
-<table>
-  <tr>
-  <th>ID</th>
-  <th>Nachname</th>
-  <th>Vorname</th>
-  <th></th>
-  </tr>
-  <tr *ngFor="let schueler of schuelerList; let i = index">
-    <td>{{schueler.schuelerID}}</td>
-    <td>{{schueler.nachname}}</td>
-    <td>{{schueler.vorname}}</td>
-    <td>
-      <button class="button-7" role="button" (click)="showEntryField(i)">+</button>
-    <div *ngIf="showEntry[i]" class="button-7">
-      <input matNativeControl [(ngModel)]="serialnumber[i]" [matAutocomplete]="auto" [formControl]="myControl">
-      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-        <mat-option *ngFor="let ipad of filteredOptions | async" [value]="ipad">
-          {{ipad.seriennummer}}
-        </mat-option>
-      </mat-autocomplete>
-      <button class="button-7" role="button" (click)="confirm()">iPad Ausgeben</button>
-    </div>
-    </td>
-    </tr>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nachname</th>
+      <th scope="col">Vorname</th>
+      <th scope="col">iPad Seriennummer</th>
+      </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let schueler of schuelerList; let i = index">
+      <td>{{schueler.schuelerID}}</td>
+      <td>{{schueler.nachname}}</td>
+      <td>{{schueler.vorname}}</td>
+      <td>
+        <button class="button-7" role="button" (click)="showEntryField(i)">+</button>
+      <div *ngIf="showEntry[i]" class="button-7">
+        <input matNativeControl [(ngModel)]="serialnumber[i]" [matAutocomplete]="auto" [formControl]="myControl">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let ipad of filteredOptions | async" [value]="ipad">
+            {{ipad.seriennummer}}
+          </mat-option>
+        </mat-autocomplete>
+        <button class="button-7" role="button" (click)="confirm()">iPad Ausgeben</button>
+      </div>
+      </td>
+      </tr>
+  </tbody>
 </table>
