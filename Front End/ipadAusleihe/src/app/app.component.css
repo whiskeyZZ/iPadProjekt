@@ -19,19 +19,38 @@ h1{
     font-weight:100;
  }
 
- p{
-    margin: 2rem 0 0 0;
-    font-size:16px;
-    font-weight:100;
-    color: gray;
+ div.col {
+    border-style:groove;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 1px;
+    border-color: rgb(255, 255, 255);
+  }
 
+ #logout {
+    color:rgb(157, 157, 157);
+    background: none;
+    border-bottom: 1px solid rgb(157, 157, 157);
+    margin: 0.2rem 0 0 0;
+    float:right;
+  }
+
+  #back {
+    color:white;
+    background: none;
+    border-bottom: 1px solid white;
+    margin: 0.2rem 0 0 0;
+  }
+
+
+ p {
+    margin: 2rem 0 0 0;
+    font-size: 16px;
+    font-weight: 100;
+    color: gray;
  }
-/*.card-header {
-    color: rgb(255, 255, 255);
-    background-color: rgb(52, 0, 222);
-    font-size: 35px;
-    font-weight:300
-} */
+
 
 input {
     margin: 0.5rem 0 0 0;
@@ -63,17 +82,18 @@ button {
 }
 
 button.overlay {
-    background-color:rgb(102, 226, 233);
-    
+    background-color:rgb(102, 226, 233); 
 }
 
-#klassen {
+
+
+/* #klassen {
     margin: 1.4rem;
     padding: 0.6rem;
     border-style: solid;
     font-size: 30px;
     font-weight:400
-}
+} */
 
 
 
