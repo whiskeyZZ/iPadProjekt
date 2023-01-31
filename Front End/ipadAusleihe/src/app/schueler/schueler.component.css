@@ -52,7 +52,7 @@ div.col {
 
 /* CSS */
 .button-7 {
-  background-color: #0095ff;
+  /*background-color: #0095ff;*/
   border: 1px solid transparent;
   border-radius: 3px;
   box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
@@ -60,11 +60,11 @@ div.col {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.15385;
-  margin: 10pt;
+  /*font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;*/
+  /*font-size: 13px;
+  /*font-weight: 400;
+  line-height: 1.15385;*/
+  margin: 0 10pt 10pt 10pt;
   outline: none;
   padding: 8px .8em;
   position: relative;
@@ -77,20 +77,26 @@ div.col {
   white-space: nowrap;
 }
 
-.button-7:hover,
+/*.button-7:hover,
 .button-7:focus {
-  background-color: #07c;
-}
+  /*background-color: #07c;
+}*/
 
 .button-7:focus {
   box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
 }
 
 .button-7:active {
-  background-color: #0064bd;
+  /*background-color: #0064bd;*/
   box-shadow: none;
 }
 
-.inputfield{
+/*.inputfield{
   margin: 20pt;
+}*/
+
+input {
+  width: 70%;
+  font-size: 18px;
+  box-sizing: border-box;
 }
